@@ -15,14 +15,14 @@ BASE_URL = 'https://news.ycombinator.com/';
 if (fs.existsSync('.env')) {
   dotenv.load();
 }
-// pages = [];
-// pages = crawler.getTopics(BASE_URL, pages);
-// _.each(pages, function (topics) {
-//   _.each(topics, function (topic) {
-//     database.addToIndex(topic.href, topic.text, topic.score);
-//   });
-// });
-// console.log('done');
+pages = [];
+pages = crawler.getTopics(BASE_URL, pages, 0);
+_.each(pages, function (topics) {
+  _.each(topics, function (topic) {
+    database.addToIndex(topic.href, topic.text, topic.score);
+  });
+});
+console.log('done');
 function callEachHour () {
   var topics = crawler.firstPage(BASE_URL);
 

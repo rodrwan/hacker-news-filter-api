@@ -43,12 +43,12 @@ describe('Crawler module', function () {
     before(function (done) {
       var url = 'https://news.ycombinator.com/';
       // runs before all tests in this block
-      topics = crawler.getTopics(url, topics);
+      topics = crawler.getTopics(url, topics, 0);
       done();
     });
 
     it('should return more than 20 pages.', function () {
-      topics.should.have.length.above(20);
+      topics.should.have.length(20);
     });
 
     it('first position should return 30 topics.', function () {

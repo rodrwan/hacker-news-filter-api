@@ -8,11 +8,11 @@ _ = require('lodash');
 
 baseUrl = 'https://news.ycombinator.com/';
 
-function getTopics (requestUrl, topics) {
+function getTopics (requestUrl, topics, currentPages) {
   var $, $trs, $table, scores, topic, nextPage, html, res, tmpTopics;
 
   topics = (typeof topics === 'undefined' ? [] : topics);
-  if (typeof requestUrl === 'undefined') {
+  if (typeof requestUrl === 'undefined' || currentPages === 20) {
     // console.log('done');
     return topics;
   }
@@ -58,7 +58,7 @@ function getTopics (requestUrl, topics) {
   });
 
   topics.push(tmpTopics);
-  return getTopics(nextPage, topics);
+  return getTopics(nextPage, topics, currentPages + 1);
 }
 
 function firstPage (requestUrl) {
