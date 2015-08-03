@@ -4,7 +4,8 @@
   "description": "api to serve filtered content of hacker news",
   "main": "web-service.js",
   "scripts": {
-    "test": "mocha spec --timeout 50000"
+    "test": "mocha spec --timeout 50000",
+    "postinstall": "./node_modules/.bin/sequelize --env production db:migrate"
   },
   "repository": {
     "type": "git",
