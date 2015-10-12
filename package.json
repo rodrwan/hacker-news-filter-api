@@ -34,9 +34,9 @@
     "q": "^1.4.1",
     "request": "^2.58.0",
     "sequelize": "^3.5.1",
-    "sqlite3": "^3.0.9",
+    "sequelize-cli": "^1.7.4",
+    "sqlite3": "^3.1.0",
     "stopwords": "0.0.4",
-    "sync-request": "^2.0.1",
-    "sequelize-cli": "^1.7.4"
+    "sync-request": "^2.0.1"
   }
 }

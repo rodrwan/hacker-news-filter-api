@@ -32,8 +32,8 @@ function getTopics (requestUrl, topics, currentPages) {
 
     lenTd = $(tr).find('td').length;
     if (lenTd === 3) {
-      text = $(tr).find('td:nth-child(3) a').text();
-      href = $(tr).find('td:nth-child(3) a').attr('href');
+      text = $(tr).find('td:nth-child(3) a').first().text();
+      href = $(tr).find('td:nth-child(3) a').first().attr('href');
       if (_.contains(href, 'item?id')) {
         href = baseUrl + href;
       }
@@ -79,8 +79,8 @@ function firstPage (requestUrl) {
 
     lenTd = $(tr).find('td').length;
     if (lenTd === 3) {
-      text = $(tr).find('td:nth-child(3) a').text();
-      href = $(tr).find('td:nth-child(3) a').attr('href');
+      text = $(tr).find('td:nth-child(3) a').first().text();
+      href = $(tr).find('td:nth-child(3) a').first().attr('href');
       if (_.contains(href, 'item?id')) {
         href = baseUrl + href;
       }
