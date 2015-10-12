@@ -30,6 +30,7 @@ describe('Crawler module', function () {
     });
 
     it('first tipic score should be and integer, not empty, not null and not undefined', function () {
+      console.log(topics[0]);
       topics[0].score.should.be.a('number')
         .that.is.not.be.empty
           .that.is.not.be.null
