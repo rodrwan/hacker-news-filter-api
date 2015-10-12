@@ -25,7 +25,7 @@ function callEachHour () {
   });
 }
 
-setInterval(callEachHour, 1000 * 60 * 60);
+setInterval(callEachHour, 1000 * 60 * 15);
 // Create a server with a host and port
 server = new Hapi.Server();
 server.connection({
@@ -61,10 +61,6 @@ server.route({
   }
 });
 
-console.log('Listening on port: ' + process.env.PORT);
-// Start the server
-server.start();
-
 pages = [];
 pages = crawler.getTopics(BASE_URL, pages, 0);
 _.each(pages, function (topics) {
@@ -73,3 +69,7 @@ _.each(pages, function (topics) {
   });
 });
 console.log('done');
+// Start the server
+server.start(function () {
+  console.log('Running at: ' + server.info.uri);
+});
