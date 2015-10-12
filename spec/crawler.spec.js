@@ -29,12 +29,8 @@ describe('Crawler module', function () {
       topics[0].should.have.all.keys('text', 'href', 'score');
     });
 
-    it('first tipic score should be and integer, not empty, not null and not undefined', function () {
-      console.log(topics[0]);
-      topics[0].score.should.be.a('number')
-        .that.is.not.be.empty
-          .that.is.not.be.null
-            .that.is.not.be.undefined;
+    it('first tipic score should be and integer', function () {
+      topics[0].score.should.be.a('number');
     });
   });
 
